@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru" xmlns:th="http://www.thymeleaf"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="03, Contact Us, Contact Us">
+    <meta name="description" content="">
+    <title>Pomoc</title>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="/css/Pomoc.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/Logo_2.png",
+		"sameAs": []
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Pomoc">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru"><header class=" u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-clearfix u-header u-section-row-container" id="sec-462e" style=""><div class="u-section-rows">
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+    var isLoggedInVar = /*[[${isLoggedIn}]]*/ false;
+    /*]]>*/
+</script>
+    <script>
+    function isLoggedIn() {
+        /* Check if the logout was successful and display the alert */
+        console.log(isLoggedInVar);
+        if (isLoggedInVar === true) {
+            successfullyLogout();
+            return true;
+        }
+        else {
+            window.location.href = '/login';
+            return false;
+        }
+    }
+    function successfullyLogout(){
+            alert("You have been successfully logged out");
+    }
+</script>
+    <div class="u-black u-clearfix u-section-row u-sticky u-sticky-3b95" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" id="sec-644f">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <a href="main" class="u-image u-logo u-image-1" title="main" data-image-width="2160" data-image-height="1620">
+                <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+            </a>
+            <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+                    <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+                        <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                        <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+                        </g></svg>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container">
+                    <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="main" style="padding: 10px;">Main</a>
+                    </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="Pomoc" style="padding: 10px;">Pomoc</a>
+                    </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="plany" style="padding: 10px;">Plany</a>
+                    </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="konto" style="padding: 10px;">Moje konto</a>
+                    </li><li class="u-nav-item"><form method="post" th:action="@{/logout}"><button class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" style="padding: 10px;" th:onclick="'return isLoggedIn();'" type="submit" th:text="${T(bdbt_bada_project.OSKApplication.UserUtils).getLoginText()}"></button></form>
+                    </li></ul>
+                </div>
+                <div class="u-custom-menu u-nav-container-collapse">
+                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-inner-container-layout u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="main">Main</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Pomoc">Pomoc</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="plany">Plany</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="konto">Moje konto</a>
+                            </li><li class="u-nav-item"><form method="post" th:action="@{/logout}"><button class="u-button-style u-nav-link" th:onclick="'return isLoggedIn();'" type="submit" th:text="${T(bdbt_bada_project.OSKApplication.UserUtils).getLoginText()}"></button></form>
+                            </li></ul>
+                        </div>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div></header>
+    <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="sec-82b8">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1">faq</h2>
+        <p class="u-text u-text-2">
+          <span style="font-size: 1.5rem;">Regulamin serwisu www.damilphone.pl</span>
+          <span style="font-size: 1.5rem;"></span>
+          <br>
+          <span style="font-style: italic;"> Obowiązujący od dnia 1 stycznia 2024 r.</span>
+          <br>
+        </p>
+        <div class="u-accordion u-collapsed-by-default u-faq u-spacing-20 u-accordion-1">
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-border-1 u-border-active-grey-75 u-border-grey-15 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-black u-accordion-link-1" id="link-accordion-6327" aria-controls="accordion-6327" aria-selected="false">
+              <span class="u-accordion-link-text"><b>I.
+Definicje</b>&nbsp;&nbsp;
+              </span><span class="u-accordion-link-icon u-icon u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8021"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-8021" style=""><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-1" id="accordion-6327" aria-labelledby="link-accordion-6327">
+              <div class="u-container-layout u-container-layout-1">
+                <div class="fr-view u-clearfix u-rich-text u-text" data-animation-name="" data-animation-duration="0" data-animation-direction="">
+                  <p>Użyte w Regulaminie pojęcia oznaczają:</p>
+                  <p>1.1. Abonent – osoba, która jest stroną umowy o świadczenie usług telekomunikacyjnych zawartej z Damilphone. Wśród Abonentów wyróżnia się Abonentów będących stroną pisemnej umowy o świadczenie usług telekomunikacyjnych zawartej z Damilphone oraz Abonentów ofert na kartę.</p>
+                  <p>1.2. Aplikacja Mobilna – oprogramowanie umożliwiające korzystanie z Indywidualnego Konta Abonenta przez Usługobiorców będących Abonentami za pomocą urządzeń mobilnych.</p>
+                  <p>1.3. Hasło - ciąg znaków alfanumerycznych, ustalany samodzielnie przez Usługobiorcę podczas procesu Rejestracji.</p>
+                  <p>1.4. Indywidualne Konto Abonenta – Usługa świadczona przez Usługodawcę, dostępna m.in za pośrednictwem Serwisu oraz Aplikacji Mobilnej, która umożliwia Usługobiorcom będącym Abonentami uzyskanie informacji i zarządzanie wybranymi usługami świadczonymi Usługobiorcy.</p>
+                  <p>1.5. Konto – podstrona Serwisu, za pośrednictwem której Usługobiorca może korzystać z Usługi świadczonej przez Usługodawcę oraz innych usług określonych w Regulaminach szczegółowych. Dostęp do Konta możliwy jest po dokonaniu przez Użytkownika jednorazowej Rejestracji i zalogowaniu do Konta.</p>
+                  <p>1.6. Login - ciąg znaków alfanumerycznych ustalany samodzielnie przez Usługobiorcę podczas procesu Rejestracji. Login może być Numerem Telefonu w sieci Damilphone albo adresem e-mail, podanym w trakcie rejestracji.</p>
+                  <p>1.7. Moderator - osoba działająca w imieniu Usługodawcy posiadająca dostęp do narzędzi technicznych, możliwości zarządzania Komentarzami wprowadzanymi w Serwisie. Zadaniem Moderatora jest nadzór nad zgodnością Komentarzy z Regulaminem, a w szczególności z tematyką Serwisu.</p>
+                  <p>1.8. Damilphone - spółka akcyjna z siedzibą w Warszawie pod adresem: ul. Telekomunikacyjna 1, 02-326 Warszawa, wpisana do Rejestru Przedsiębiorców prowadzonego przez Sąd Rejonowy dla miasta st. Warszawy w Warszawie, XII Wydział Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS, pod numerem 0000000003; REGON 1234567899, NIP 222-02-20-222, posiadającą kapitał zakładowy w wysokości 3.000.000.000 w całości opłacony.</p>
+                  <p>1.9. Regulamin - niniejszy Regulamin Serwisu www.damilphone.pl i Aplikacji Mobilnej.</p>
+                  <p>1.10. Rejestracja - jednorazowa czynność, polegająca na założeniu przez Usługobiorcę Konta u Usługodawcy, dokonana z wykorzystaniem panelu administracyjnego udostępnionego przez Usługodawcę na stronie Serwisu.</p>
+                  <p>1.11. Serwis – serwis dostępny pod adresem www.Damilphone.pl, za pośrednictwem którego świadczona jest Usługa określona w punkcie 1.18 oraz inne usługi.</p>
+                  <p>1.12. Strony – Usługodawca i Usługobiorca.</p>
+                  <p>1.13. Umowa - umowa o świadczenie usług drogą elektroniczną pomiędzy Stronami. 1.14. Usługa - usługa świadczona drogą elektroniczną przez Usługodawcę na zasadach określonych w Regulaminie za pośrednictwem Serwisu, umożliwiająca Usługobiorcy rejestrację w Serwisie, a w niektórych przypadkach także korzystanie z niektórych usług powiązanych ze świadczonymi przez Usługodawcę usługami telekomunikacyjnymi.</p>
+                  <p>1.15. Usługobiorca - osoba fizyczna będąca odbiorcą Usługi, która dokonała Rejestracji, przy czym warunkiem Rejestracji jest ukończenie 13 roku życia (w przypadku nieukończenia przez Usługobiorcę 18 roku życia wymagana jest pisemna zgoda jego przedstawiciela ustawowego, opiekuna lub kuratora).</p>
+                  <p>1.16. Usługodawca – Damilphone.</p>
+                  <p>1.17. Ustawa o świadczeniu usług drogą elektroniczną - Ustawa z dnia 18 lipca 2002r. o świadczeniu usług drogą elektroniczną (Dz.U. 2002r., Nr 144, poz. 1244 ze zm.).</p>
+                  <p>1.18. Ustawa Prawo telekomunikacyjne - Ustawa z dnia 16 lipca 2004r. Prawo telekomunikacyjne (Dz.U. Nr 171, poz. 1800ze zm.).</p>
+                  <p>1.19. Użytkownik – osoba korzystająca z Serwisu bez dokonania Rejestracji.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-border-1 u-border-active-grey-75 u-border-grey-15 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-black u-accordion-link-2" id="link-accordion-4aab" aria-controls="accordion-4aab" aria-selected="false">
+              <span class="u-accordion-link-text"><b>II.
+Rejestracja Usługobiorcy</b>&nbsp;&nbsp;
+              </span><span class="u-accordion-link-icon u-icon u-text-black u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-3470"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-3470" style=""><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-2" id="accordion-4aab" aria-labelledby="link-accordion-4aab">
+              <div class="u-container-layout u-container-layout-2">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p>2.1. Abonenci, którzy podadzą przy Rejestracji numer telefonu lub usługi Damilphone, zarejestrują się do Usługi świadczonej przez Damilphone.</p>
+                  <p>2.2. W trakcie Rejestracji Użytkownik dokonuje czynności, na które składa się:</p>
+                  <p>2.2.1. potwierdzenie, że zapoznał się on z treścią Regulaminu oraz że akceptuje jego postanowienia,</p>
+                  <p>2.2.2. podanie Numeru Telefonu komórkowego lub stacjonarnego lub numeru usługi Damilphone oraz otrzymanie od Usługodawcy kodu dostępu wysyłanego za pośrednictwem SMS (w przypadku Abonentów usług mobilnych).</p>
+                  <p>2.2.3. wypełnienie formularza dostępnego na stronie Serwisu,</p>
+                  <p>2.2.4. podanie danych wymaganych do Rejestracji, w tym w szczególności Loginu i Hasła.</p>
+                  <p>2.2.5. możliwość wyrażenia zgód dostępnych w formularzu w formie tzw. checkboxa,</p>
+                  <p>2.2.6. uzyskanie dostępu do Konta z wykorzystaniem Loginu oraz Hasła.</p>
+                  <p>2.3. Wraz z dokonaniem Rejestracji Usługobiorca uzyskuje dostęp do Konta, który jest każdorazowo zapewniany przez Usługodawcę, do którego Usługi Usługobiorca zarejestrował się, po wpisaniu przez Usługobiorcę Loginu i Hasła.</p>
+                  <p>2.4. W razie podania przez Usługobiorcę adresu e-mail przy Rejestracji, po pomyślnym zakończeniu Rejestracji otrzyma on e-mail z informacją o zakończeniu Rejestracji. Na adres e-mail mogą być też wysyłane informacje techniczne dotyczące działania Serwisu, niestanowiące informacji handlowej.</p>
+                  <p>2.5. W trakcie Rejestracji, jak również podczas korzystania z Usługi, Usługobiorca zobowiązany jest do:</p>
+                  <p>2.5.1. podawania danych zgodnych z prawdą, dokładnych i aktualnych, niewprowadzających w błąd oraz nienaruszających praw osób trzecich,</p>
+                  <p>2.5.2. aktualizacji podanych w formularzu rejestracyjnym danych, niezwłocznie po każdej zmianie tych danych. Aktualizacji danych dokonuje się w ramach Konta Usługobiorcy,</p>
+                  <p>2.5.3. zachowania w tajemnicy Hasła oraz nieudostępniania go innym osobom.</p>
+                  <p>2.6. Usługobiorca ponosi wyłączną odpowiedzialność za treść podanych przez siebie danych, jak również za wybór Hasła, w tym również odpowiedzialność za ewentualne naruszenie praw osób trzecich w związku z wyborem Loginu i Nicku. Usługobiorca ponosi również wyłączną odpowiedzialność związaną z ujawnieniem innym osobom swojego Loginu lub Hasła.</p>
+                  <p>2.7. Po skorzystaniu z Serwisu Usługobiorca może skorzystać z opcji – wyloguj się.</p>
+                  <p>2.8 &nbsp;Rekomendowane jest posiadanie na komputerze Usługobiorcy, lub innym urządzeniu, oprogramowanie firewall i programów antywirusowych.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-border-1 u-border-active-grey-75 u-border-grey-15 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-black u-accordion-link-3" id="link-accordion-eb1f" aria-controls="accordion-eb1f" aria-selected="false">
+              <span class="u-accordion-link-text"><b>III.
+Reklamacje</b>&nbsp;&nbsp;
+              </span><span class="u-accordion-link-icon u-icon u-text-black u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e07d"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-e07d" style=""><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-3" id="accordion-eb1f" aria-labelledby="link-accordion-eb1f">
+              <div class="u-container-layout u-container-layout-3">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p>3.1. Usługodawca podejmuje działania w celu zapewnienia w pełni poprawnego działania Serwisu i Usług, w takim zakresie, jaki wynika z aktualnej wiedzy technicznej, i zobowiązuje się usunąć w rozsądnym terminie nieprawidłowości, jakie zostały zgłoszone przez Usługobiorców jego Usługi.</p>
+                  <p>3.2. W trakcie korzystania z Usługi, Usługobiorca zobowiązany jest utrzymywać w poufności Hasła i Login oraz dołożyć najwyższej staranności w celu uniemożliwienia osobom trzecim wejście w posiadanie Loginu lub Hasła.</p>
+                  <p>3.3. Nieprawidłowości związane z funkcjonowaniem Serwisu lub Usługi, a także reklamacje Usługobiorca Damilphone, a także Użytkownik może zgłaszać poprzez pocztę elektroniczną o adresie: pomoc@pomocdamilphone.pl</p>
+                  <p>3.5. Za datę złożenia reklamacji uznaje się datę doręczenia reklamacji Usługodawcy.</p>
+                  <p>3.6. Reklamacje będą rozpatrywane w terminie 14 dni roboczych od ich otrzymania.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-border-1 u-border-active-grey-75 u-border-grey-15 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-black u-accordion-link-4" id="link-f82c" aria-controls="f82c" aria-selected="false">
+              <span class="u-accordion-link-text"><b>IV.
+Indywidualne Konto Abonenta</b>&nbsp;&nbsp;
+              </span><span class="u-accordion-link-icon u-icon u-text-black u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d4c0"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-d4c0"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-4" id="f82c" aria-labelledby="link-f82c">
+              <div class="u-container-layout u-container-layout-4">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p id>4.1. Dokonanie Rejestracji i założenie Konta w Serwisie umożliwia dostęp do Indywidualnego Konta Abonenta. Abonent posiadający pakiet stacjonarnych i mobilnych usług telekomunikacyjnych świadczonych przez Damilphone, zakupionych w ramach oferty łączonej, w chwili założenia Indywidualnego Konta Abonenta dla usługi mobile uzyska dostęp do Indywidualnego Konta Abonenta dla usługi stacjonarnej i na odwrót.</p>
+                  <p>4.2. Indywidualne Konto Abonenta jest dostępne wyłącznie dla Usługobiorców będących Abonentami. Jeżeli Usługodawca nie ogłosi inaczej na stronach Serwisu, możliwość korzystania z Indywidualnego Konta Abonenta posiadają wszyscy Abonenci, bez względu na obowiązującą ich ofertę lub plan taryfowy.</p>
+                  <p>4.3. Możliwość korzystania z Indywidualnego Konta Abonenta może zostać uzależniona od podania podczas Rejestracji dodatkowych danych (np. podanie kodu abonenckiego, numeru umowy, itp).</p>
+                  <p>4.4. Korzystanie z Indywidualnego Konta Abonenta jest możliwe poprzez Serwis oraz poprzez Aplikację Mobilną, przy czym Rejestracja i założenie Konta w Serwisie mogą być możliwe wyłącznie poprzez strony Serwisu.</p>
+                  <p>4.6. Indywidualne Konto Abonenta umożliwia w szczególności:</p>
+                  <p>4.6.1. wyświetlenie informacji o statusie, parametrach, ustawieniach usług aktywowanych, dostępnych w ramach Indywidualnego Konta Abonenta,</p>
+                  <p>7.6.2. aktywację / dezaktywację / modyfikację wybranych usług dostępnych dla oferty Damilphone obowiązującej Usługobiorcę, których obsługa jest możliwa za pośrednictwem Indywidualnego Konta Abonenta</p>
+                  <p>4.6.5. wyświetlenie informacji nt. aktualnego planu oraz złożenie zamówienia zmiany planu taryfowego na inny, którego zamówienie jest możliwe za pośrednictwem Indywidualnego Konta Abonenta,</p>
+                  <p>4.6.6. wyświetlenie salda konta oraz kwoty ostatniej faktury,</p>
+                  <p>4.6.7. umożliwienie zamówienia, a w przypadku jego realizacji - także podglądu oraz pobrania na dowolny zapisywalny nośnik danych ostatnich faktur VAT, rachunków szczegółowych, załączników do faktury dla wszystkich kontraktów na koncie abonenckim,</p>
+                  <p>4.6.8. dokonanie rezygnacji z otrzymywania faktur w formie papierowej,</p>
+                  <p>4.6.9. dostęp do historii zleceń zamówionych z wykorzystaniem Indywidualnego Konta Abonenta,</p>
+                  <p>4.6.10. wysłanie prośby o informacje/zlecenia/reklamacji do Damilphone Biura Obsługi Klienta,</p>
+                  <p>4.6.11. dostęp do historii doładowań numeru wykonanych za pośrednictwem Indywidualnego Konta Abonenta,</p>
+                  <p>4.6.12. zmiana kodu abonenckiego oraz zmiana hasła dostępowego do Internetu,</p>
+                  <p>4.6.135. wyświetlenie informacji o aktualnej formie płatności i złożenie zamówienia zmiany formy płatności.</p>
+                  <p>4.9. Korzystanie z Indywidualnego Konta Abonenckiego za pomocą Aplikacji Mobilnej jest możliwe pod warunkiem spełnienia minimalnych wymagań technicznych koniecznych do korzystania z Aplikacji Mobilnej.</p>
+                  <p>4.10. Aplikacja Mobilna dostępna jest na następujących platformach:</p>
+                  <p>4.10.1. ?,</p>
+                  <p>4.11. Logowanie się do Indywidualnego Konta Abonenta przez Aplikację Mobilną polega na:</p>
+                  <p>4.11.1. uruchomieniu Aplikacji Mobilnej bez konieczności podawania Loginu i Hasła ( tzw. „logowanie automatyczne”) - w przypadku Abonenta korzystającego z transmisji danych w sieci Damilphone;</p>
+                  <p>4.11.2. wprowadzeniu Loginu i Hasła do Aplikacji Mobilnej - w przypadku Abonenta korzystającego z transmisji danych poza siecią Damilphone lub korzystającego z Internetu za pomocą Wi-Fi.</p>
+                  <p>4.12. Zabrania się korzystania z Aplikacji Mobilnej do celów komercyjnych oraz dekompilacji, zmieniania i modyfikowania jej kodu źródłowego.</p>
+                  <p>4.13. Korzystanie z Aplikacji Mobilnej jest bezpłatne, z wyjątkiem kosztów transmisji danych potrzebnych do pobrania i korzystania z Aplikacji Mobilnej, które Abonent pokrywa we własnym zakresie na podstawie umów zawartych z podmiotami świadczącymi takie usługi.</p>
+                  <p>4.14. Abonent może w każdym czasie zakończyć korzystanie z Aplikacji Mobilnej tylko poprzez trwałe usunięcie Aplikacji ze swojego urządzenia mobilnego.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-border-1 u-border-active-grey-75 u-border-grey-15 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-button-style u-text-black u-accordion-link-5" id="link-c070" aria-controls="c070" aria-selected="false">
+              <span class="u-accordion-link-text"><b>V.
+Postanowienia końcowe </b>&nbsp;&nbsp;
+              </span><span class="u-accordion-link-icon u-icon u-text-black u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-bebe"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-bebe"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-accordion-pane-5" id="c070" aria-labelledby="link-c070">
+              <div class="u-container-layout u-container-layout-5">
+                <div class="fr-view u-clearfix u-rich-text u-text">
+                  <p id="isPasted">5.1. Spory pomiędzy Damilphone a Usługobiorcą, który nie jest konsumentem w rozumieniu art. 221 ustawy z dnia 23 kwietnia 1964r. Kodeks Cywilny (Dz.U. Nr 16, poz. 93 ze zm.), będą rozstrzygane będą przez sąd powszechny właściwy dla siedziby Damilphone.</p>
+                  <p>5.2. Usługodawcy przysługuje prawo okresowego zawieszenia świadczenia Usługi w Serwisie lub Aplikacji Mobilnej w stosunku do wszystkich lub niektórych Kont Usługobiorców w związku z przeprowadzaniem prac konserwacyjnych.</p>
+                  <p>5.3. Usługodawca zastrzega sobie prawo do całkowitego zaprzestania udostępniania świadczonej przez siebie Usługi bez podania przyczyn po uprzednim poinformowaniu Usługobiorców w drodze &nbsp;mailowej o podjęciu takiej decyzji co najmniej 14 (czternaście) dni wcześniej, chyba że Usługodawca zobowiązał się do świadczenia Usługi przez określony czas.</p>
+                  <p>5.4. Usługodawca zastrzega sobie prawo do zmiany niniejszego Regulaminu w dowolnym czasie, o czym Usługobiorca zostanie powiadomiony z min. 14-dniowym wyprzedzeniem . Zmiany Regulaminu nie będą ograniczać praw nabytych przez Usługobiorców przed zmianą. Zmiany Regulaminu obowiązują od momentu wskazanego w nowym Regulaminie umieszczonym na stronie internetowej Serwisu.</p>
+                  <p>5.5. Aktualny Regulamin jest publikowany na stronie internetowej Serwisu.</p>
+                  <p>5.6. Regulamin wchodzi w życie z dniem 1 stycznia 2024 r.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="/files/Regulaminserwisu.docx" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-button-style u-file-link u-hover-none u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-1">Pobierz regulamin</a>
+      </div>
+    </section>
+  <section class="u-align-center u-clearfix u-grey-10 u-section-2" id="carousel_643f">
+      <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                  <div class="u-layout-row">
+                      <div class="u-container-style u-layout-cell u-size-30 u-white u-layout-cell-1">
+                          <div class="u-container-layout u-container-layout-1">
+                              <div class="u-accordion u-expanded-width u-spacing-2 u-accordion-1">
+                                  <div class="u-accordion-item u-accordion-item-1">
+                                      <a class="active u-accordion-link u-button-style u-text-body-color u-accordion-link-1" id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="true">
+                        <span class="u-accordion-link-text"><b>Jak sprawdzić swoją aktualną ofertę oraz plan taryfowy?</b>&nbsp; &nbsp;&nbsp;
+                        </span><span class="u-accordion-link-icon u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 426.66667 426.66667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-347e"></use></svg><svg class="u-svg-content" viewBox="0 0 426.66667 426.66667" id="svg-347e"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"></path></svg></span>
+                                      </a>
+                                      <div class="u-accordion-active u-accordion-pane u-align-left u-container-style u-palette-1-base u-accordion-pane-1" id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                                          <div class="u-container-layout u-container-layout-2">
+                                              <p class="u-text u-text-1"> Aby sprawdzić swój aktualny
+                                                  plan taryfowy, zaloguj się do swojego konta online na naszej stronie
+                                                  internetowej. W sekcji
+                                                  "Moje Konto" znajdziesz szczegóły dotyczące Twojej oferty wraz z podłącząnym do niej planem komórkowym.</p>
+                                              <a href="konto" class="u-border-3 u-border-white u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">POKAŻ</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="u-accordion-item u-accordion-item-2">
+                                      <a class="u-accordion-link u-button-style u-text-body-color u-accordion-link-2" id="link-accordion-05cb" aria-controls="accordion-05cb" aria-selected="false">
+                        <span class="u-accordion-link-text"><b>Gdzie znaleźć wszystkie dostępne oferte?</b>
+                        </span><span class="u-accordion-link-icon u-icon u-icon-circle u-text-palette-1-base u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 426.66667 426.66667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ae03"></use></svg><svg class="u-svg-content" viewBox="0 0 426.66667 426.66667" id="svg-ae03"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"></path></svg></span>
+                                      </a>
+                                      <div class="u-accordion-pane u-align-left u-container-style u-palette-1-base u-accordion-pane-2" id="accordion-05cb" aria-labelledby="link-accordion-05cb">
+                                          <div class="u-container-layout u-container-layout-3">
+                                              <p class="u-text u-text-2">Możesz sprawdzić aktualne plany na naszej stronie w zakładce "Plany"</p>
+                                              <a href="plany" class="u-border-3 u-border-white u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">POKAŻ</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="u-accordion-item u-accordion-item-3">
+                                      <a class="u-accordion-link u-button-style u-text-body-color u-accordion-link-3" aria-controls="accordion-a6bb" aria-selected="false">
+                                          <span class="u-accordion-link-text">Czy mogę zmienić swoje dane osobowe?</span><span class="u-accordion-link-icon u-icon u-icon-circle u-text-palette-1-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 426.66667 426.66667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a4a8"></use></svg><svg class="u-svg-content" viewBox="0 0 426.66667 426.66667" id="svg-a4a8"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"></path></svg></span>
+                                      </a>
+                                      <div class="u-accordion-pane u-align-left u-container-style u-palette-1-base u-accordion-pane-3" aria-labelledby="link-accordion-a6bb">
+                                          <div class="u-container-layout u-container-layout-4">
+                                              Aby zmienić swój profil, zaloguj się
+                                              do swojego konta online na naszej stronie
+                                              internetowej. W sekcji
+                                              "Moje Konto" w zakładce "Profil" możesz zobaczyć i zmodyfikować swoje dane osobowe</p>
+                                              <a href="konto" class="u-border-3 u-border-white u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">POKAŻ</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="u-accordion-item u-accordion-item-4">
+                                      <a class="u-accordion-link u-button-style u-text-body-color u-accordion-link-4" id="link-accordion-a6bb" aria-controls="accordion-a6bb" aria-selected="false">
+                        <span class="u-accordion-link-text"><b>Czy mogę założyć konto, nie będąc klientem Damilphone?</b>
+                        </span><span class="u-accordion-link-icon u-icon u-icon-circle u-text-palette-1-base u-icon-4"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 426.66667 426.66667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f384"></use></svg><svg class="u-svg-content" viewBox="0 0 426.66667 426.66667" id="svg-f384"><path d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0"></path></svg></span>
+                                      </a>
+                                      <div class="u-accordion-pane u-align-left u-container-style u-palette-1-base u-accordion-pane-4" aria-labelledby="link-accordion-a6bb">
+                                          <div class="u-container-layout u-container-layout-5">
+                                              <p class="u-text u-text-4"> Niestety nie ma możliwości zalogowania
+                                                  oraz zarejestrowania się na naszej stronie dla osób,
+                                                  które nie są naszymi klientami.</p>
+                                              </div>
+                                      </div>
+                                  </div>
+                                  <div class="u-accordion-item u-accordion-item-5">
+                                      <a class="u-accordion-link u-button-style u-text-body-color u-accordion-link-5" id="link-5f9c" aria-controls="5f9c" aria-selected="false">
+                        <span class="u-accordion-link-text"><b>Jak dbacie o prywatność danych użytkowników?</b>
+                        </span><span class="u-accordion-link-icon u-icon u-icon-circle u-text-palette-1-base u-icon-5"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d6c5"></use></svg><svg class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-d6c5"><path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+	c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path></svg></span>
+                                      </a>
+                                      <div class="u-accordion-pane u-align-left u-container-style u-palette-1-base u-accordion-pane-5" id="5f9c" aria-labelledby="link-5f9c">
+                                          <div class="u-container-layout u-container-layout-6">
+                                              <p class="u-text u-text-5"> - Nasza polityka prywatności jest opublikowana
+                                                  w regulaminie serwisu.<br> - Wdrożyliśmy środki bezpieczeństwa, aby
+                                                  chronić Twoje dane osobowe.
+                                              </p>
+                                              <a href="/files/Regulamin_serwisu.pdf" class="u-border-3 u-border-white u-btn u-button-style u-file-link u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">PRZECZYTAJ REGULAMIN</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <p class="u-text u-text-default u-text-6"> Jeśli Twoje pytanie nie znalazło odpowiedzi powyżej, skontaktuj się z
+                                  naszym działem Obsługi Klienta infolinię lub adres mailowy. Jesteśmy tutaj, aby
+                                  pomóc!
+                                  Dziękujemy, że jesteś z Damilphone.</p>
+                              <p class="u-text u-text-7">+48 555 555 555</p>
+                          </div>
+                      </div>
+                      <div class="u-align-center u-container-style u-layout-cell u-palette-1-base u-size-30 u-layout-cell-2">
+                          <div class="u-container-layout u-container-layout-7">
+                              <p class="u-text u-text-8">Szybkie odpowiedźi na często zadawane pytania</p>
+                              <img class="u-image u-image-contain u-image-default u-image-1" src="images/Untitled-3.png" alt="" data-image-width="473" data-image-height="464">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="u-clearfix u-grey-10 u-section-3" id="carousel_2830">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+          <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                  <div class="u-layout-row">
+                      <div class="u-align-left u-container-style u-layout-cell u-palette-1-base u-size-30-lg u-size-30-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-1">
+                          <div class="u-container-layout u-valign-top u-container-layout-1">
+                              <div class="u-list u-list-1">
+                                  <div class="u-repeater u-repeater-1">
+                                      <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
+                                          <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="images/646094-23388df3.png" alt=""></span>
+                                              <h5 class="u-text u-text-1">Napisz do nas</h5>
+                                              <p class="u-text u-text-2">Nasz spójny zestaw zawsze jest gotowy ci pomóc<br>
+                                                  <a href="https://nicepage.best" class="u-active-none u-border-1 u-border-active-palette-3-base u-border-hover-palette-3-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-hover-none u-none u-radius-0 u-text-active-palette-3-base u-text-hover-palette-3-base u-text-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-1">hi@ourcompany.com </a>
+                                              </p>
+                                          </div>
+                                      </div>
+                                      <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
+                                          <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3"><span class="u-file-icon u-icon u-text-white u-icon-2"><img src="images/2838912-49358f0d.png" alt=""></span>
+                                              <h5 class="u-text u-text-3">Biuro głowne</h5>
+                                              <p class="u-text u-text-4"> Przyjdź i powiedz "cześć"<br>
+                                                  <a href="https://maps.app.goo.gl/yw4Cac7fVYceQKUU7" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-btn-2">Krasnaya sq., 1, Moscow, Russia, 109012</a>
+                                                  <br>
+                                              </p>
+                                          </div>
+                                      </div>
+                                      <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
+                                          <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4"><span class="u-file-icon u-icon u-text-white u-icon-3"><img src="images/8066424-eec24b29.png" alt=""></span>
+                                              <h5 class="u-text u-text-5">telefon</h5>
+                                              <p class="u-text u-text-6"> Poniedziałek-sobota 8:00-22:00<br>
+                                                  <a class="u-active-none u-border-1 u-border-active-palette-3-base u-border-hover-palette-3-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-button-link u-button-style u-hover-none u-none u-text-active-palette-3-base u-text-hover-palette-3-base u-text-palette-3-base u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">+48 555 555 555</a>
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="u-align-left u-container-style u-layout-cell u-size-30-lg u-size-30-xl u-size-60-md u-size-60-sm u-size-60-xs u-white u-layout-cell-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                          <div class="u-container-layout u-valign-top u-container-layout-5">
+                              <h2 class="u-text u-text-7">Skontaktuj się z nami</h2>
+                              <p class="u-text u-text-8">Podrobnie opisując swój problem.</p>
+                              <div class="u-align-left u-expanded-width u-form u-form-1">
+                                  <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form">
+                                      <div class="u-form-group u-form-name u-label-top">
+                                          <label for="name-5a14" class="u-label" wfd-invisible="true">Imię</label>
+                                          <input type="text" placeholder="Enter your Name" id="name-5a14" name="name" class="u-border-grey-10 u-grey-5 u-input u-input-rectangle u-radius-5" required="">
+                                      </div>
+                                      <div class="u-form-email u-form-group u-label-top">
+                                          <label for="email-5a14" class="u-label" wfd-invisible="true">Email</label>
+                                          <input type="email" placeholder="Enter a valid email address" id="email-5a14" name="email" class="u-border-grey-10 u-grey-5 u-input u-input-rectangle u-radius-5" required="">
+                                      </div>
+                                      <div class="u-form-group u-form-message u-label-top">
+                                          <label for="message-5a14" class="u-label" wfd-invisible="true">Jak możemy ci pomóc?</label>
+                                          <textarea placeholder="" rows="4" cols="50" id="message-5a14" name="message" class="u-border-grey-10 u-grey-5 u-input u-input-rectangle u-radius-5" required=""></textarea>
+                                      </div>
+                                      <div class="u-align-right u-form-group u-form-submit u-label-top">
+                                          <a href="#" class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-1 u-palette-3-base u-radius-5 u-text-active-white u-text-hover-white u-text-palette-1-base u-btn-4">Wyślij</a>
+                                          <input type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
+                                      </div>
+                                      <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
+                                      <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
+                                      <input type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
+                                      <input type="hidden" name="formServices" value="414df819-e413-46e9-5521-b0f8269b09e8">
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    
+    
+    
+    
+    <footer class="u-clearfix u-footer u-grey-80" id="sec-4ac5"><div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md u-layout-cell-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
+                  <div data-position="" class="u-position"><!--block-->
+                    <div class="u-block">
+                      <div class="u-block-container u-clearfix"><!--block_header-->
+                        <h5 class="u-block-header u-text"><!--block_header_content--> Damilphone<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                        <div class="u-block-content u-text"><!--block_content_content--> Limitless horizon<!--/block_content_content--></div><!--/block_content-->
+                      </div>
+                    </div><!--/block-->
+                  </div><!--/position-->
+                </div>
+              </div>
+              <div class="u-align-center-sm u-align-right-md u-container-style u-layout-cell u-size-20 u-size-30-md u-layout-cell-2">
+                <div class="u-container-layout u-valign-top u-container-layout-2">
+                  <a href="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D180913231W6972H5702/views/1,width=800,height=800,appearanceId=839,backgroundColor=F2F2F2/meme-cat-naklejka.jpg" class="u-image u-logo u-image-1" data-image-width="2160" data-image-height="1620">
+                    <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+                  </a>
+                </div>
+              </div>
+              <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-right-lg u-align-right-xl u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-3">
+                <div class="u-container-layout u-valign-middle u-container-layout-3">
+                    <h5 class="u-block-header u-text">Opracowanie w ramach przedmiotu "Bazy danych i Big Data"</h5><!--/block_header--><!--block_content-->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></footer>
+
+  
+</body></html>

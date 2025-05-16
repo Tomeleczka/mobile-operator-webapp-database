@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru" xmlns:th="http://www.thymeleaf.org"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="REKORDY &amp;quot;POCZTY&amp;quot;">
+  <meta name="description" content="">
+  <title>Oferty manager application</title>
+  <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="/css/oferty_new.css" media="screen">
+  <script class="u-script" type="text/javascript" src="/js/jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="/js/script.js" defer=""></script>
+  <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
+  <meta name="referrer" content="origin">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+
+
+  <script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "",
+    "logo": "images/Logo_2.png",
+    "sameAs": []
+  }</script>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Страница 1">
+  <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+<script th:inline="javascript">
+        /*<![CDATA[*/
+        var listIdPlan = /*[[${listPlan}]]*/ null;
+        var listIdOperator = /*[[${listOperator}]]*/ null;
+        /*]]>*/
+    </script>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", function (event) {
+                const nazwaInput = document.querySelector("input[name='nazwa']");
+                const okresInput = document.querySelector("input[name='okres']");
+                const cenaInput = document.querySelector("input[name='cena']");
+                const specjalnaInput = document.querySelector("input[name='specjalna']");
+                const idOperatoraInput = document.querySelector("input[name='id_operatora']");
+                const idPlanuInput = document.querySelector("input[name='id_planu']");
+
+                if (!isStringValid(nazwaInput.value, 100)) {
+                    alert("Nazwa musi być ciągiem znaków o maksymalnej długości 100.");
+                    event.preventDefault();
+                }
+                if (!isStringValid(okresInput.value, 30)) {
+                    alert("Okres musi być ciągiem znaków o maksymalnej długości 30.");
+                    event.preventDefault();
+                }
+                if (!isCenaValid(cenaInput.value)) {
+                    alert("Cena musi być formatu float(10,2).");
+                    event.preventDefault();
+                }
+                if (!isBoolean(specjalnaInput.value)) {
+                    alert("Pole specjalna musi być formatu Boolean (1, 0) czy (true, false)");
+                    event.preventDefault();
+                }
+
+
+                if (!doesIdOperatoraExist(idOperatoraInput.value)) {
+                    alert("Wprowadzony Id Operatora nie istnieje. Zobacz istniejące rekordy Operatorzy w tabeli poniżej.");
+                    event.preventDefault();
+                }
+                if (!doesIdPlanuExist(idPlanuInput.value)) {
+                    alert("Wprowadzony Id Planu nie istnieje. Zobacz istniejące rekordy Plany w tabeli poniżej.");
+                    event.preventDefault();
+                }
+            });
+            function isStringValid(value, maxLength) {
+                return value !== null && typeof value === 'string' && value.length <= maxLength && value.length > 0;
+            }
+            function isPeselValid(value) {
+                return value.length === 11;
+            }
+
+            function isCenaValid(cena) {
+            return cena !== null && Number.isInteger(Number(cena));
+            }
+
+
+            function isNumerTelefonuValid(numerTelefonu) {
+                const phoneNumberRegex = /^\+48\d{9}$/;
+                return phoneNumberRegex.test(numerTelefonu);
+            }
+
+            function isRodzajValid(rodzaj) {
+                return rodzaj === "E-SIM" || rodzaj === "Phisical";
+            }
+
+
+    function isBoolean(value) {
+        const booleanRegex = /^(true|false|1|0)$/i;
+        return booleanRegex.test(value);
+    }
+
+            function doesIdOperatoraExist(id) {
+                const exists = listIdOperator.some(operator => operator.id_operatora === parseInt(id));
+
+                return exists;
+            }
+            function doesIdPlanuExist(id) {
+                const exists = listIdPlan.some(plan => plan.id_planu === parseInt(id));
+
+                return exists;
+            }
+
+        });
+    </script>
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru"><header class=" u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-clearfix u-header u-section-row-container" id="sec-462e" style=""><div class="u-section-rows">
+  <div class="u-black u-clearfix u-section-row u-sticky u-sticky-3b95" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" id="sec-644f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a href="main_admin" class="u-image u-logo u-image-1" title="main" data-image-width="2160" data-image-height="1620">
+        <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+      </a>
+      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+          <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+            </g></svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="main_admin" style="padding: 10px;">Main</a>
+          </li><li class="u-nav-item"><form method="post" onclick="successfullyLogout()" th:action="@{/logout}"><button class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" style="padding: 10px;" type="submit">Wyloguj</button></form>
+          </li></ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="main_admin">Main</a>
+              </li><li class="u-nav-item"><form method="post" onclick="successfullyLogout()" th:action="@{/logout}"><button class="u-button-style u-nav-link" type="submit">Wyloguj</button></form>
+              </li></ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+
+
+
+
+
+  </div>
+  <div class="u-section-row" id="sec-2cae">
+    <div class="u-clearfix u-sheet u-sheet-2">
+      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-2">
+        <div class="menu-collapse">
+          <a class="u-button-style u-nav-link" href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-763d"></use></svg>
+            <svg class="u-svg-content" version="1.1" id="svg-763d" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+            </g></svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="poczty_admin">Poczty</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="adresy_admin">Adresy</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="pracownicy_admin">Pracownicy</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="plany_komorkowe_admin">Plany komórkowe</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="oferty_admin">Oferty</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="klienci_admin">Klienci</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="umowy_admin">Umowy</a>
+          </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="karty_sim_admin">Karty SIM</a>
+          </li></ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="poczty_admin">Poczty</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="adresy_admin">Adresy</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="pracownicy_admin">Pracownicy</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="plany_komorkowe_admin">Plany komórkowe</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="oferty_admin">Oferty</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="klienci_admin">Klienci</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="umowy_admin">Umowy</a>
+              </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="karty_sim_admin">Karty SIM</a>
+              </li></ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+
+
+
+
+
+  </div>
+</div></header>
+<section class="u-align-center u-border-2 u-border-grey-75 u-clearfix u-section-1" id="sec-c0bd">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <h2 class="u-align-center u-text u-text-palette-1-base u-text-1">Dodaj rekord do "Oferty"</h2>
+    <div class="u-container-style u-group u-shape-rectangle u-group-1">
+      <div class="u-container-layout u-container-layout-1">
+        <div class="custom-expanded u-container-style u-group u-palette-3-light-1 u-group-2">
+          <div class="u-container-layout u-container-layout-2"><span class="u-file-icon u-icon u-icon-1"><img src="images/7827899.png" alt=""></span>
+            <h6 class="u-text u-text-default u-text-2">Hint: Użyj Wymaganych formatów (Są podane przy nazwie atrybutu)</h6>
+          </div>
+        </div>
+        <div class="custom-expanded u-container-style u-group u-palette-3-light-1 u-group-3">
+          <div class="u-container-layout u-container-layout-3"><span class="u-file-icon u-icon u-icon-2"><img src="images/7827899.png" alt=""></span>
+            <h6 class="u-text u-text-default u-text-3">Hint: Skorzystaj z kolorystycznej podpowiedzi pod tabelą</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+        <form action="#" th:action="@{/saveOferta}" th:object="${oferta}" method="post">
+        <div class="custom-expanded u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="59.9%">
+              <col width="40.1%">
+            </colgroup>
+            <thead class="u-align-center u-table-header u-table-header-1">
+              <tr style="height: 69px;">
+                <th class="u-border-1 u-border-white u-palette-1-base u-table-cell u-text-body-alt-color u-table-cell-1">Nazwa (String[100])</th>
+                <td><input type="text" th:field="*{nazwa}"> </td>
+              </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body">
+              <tr style="height: 45px;">
+                <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-3">Okres (String[30])</td>
+                <td><input type="text" th:field="*{okres}"> </td>
+              </tr>
+              <tr style="height: 45px;">
+                <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-5">Cena (float[10,2])</td>
+                <td><input type="text" th:field="*{cena}"> </td>
+              </tr>
+              <tr style="height: 69px;">
+                <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-7">Specjalna Oferta(Boolean(0,1)</td>
+                <td><input type="text" th:field="*{specjalna}"></td>
+              </tr>
+              <tr style="height: 45px;">
+                <td class="u-black u-border-1 u-border-grey-25 u-table-cell u-table-cell-9">ID Operatora (int)</td>
+                <td><input type="text" th:field="*{id_operatora}"> </td>
+              </tr>
+              <tr style="height: 45px;">
+                <td class="u-black u-border-1 u-border-grey-25 u-table-cell u-table-cell-11">ID Planu (int)</td>
+                <td><input type="text" th:field="*{id_planu}"> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button type="submit" class="u-border-none u-btn u-button-style u-hover-white u-palette-2-light-1 u-btn-1">Zachowaj </button>
+
+        </form>
+        <div class="u-border-3 u-border-grey-75 u-container-align-center u-container-style u-group u-white u-group-5">
+          <div class="u-container-layout u-container-layout-5">
+            <div class="u-palette-2-light-1 u-shape u-shape-rectangle u-shape-1"></div>
+            <div class="u-container-style u-group u-palette-2-light-1 u-shape-rectangle u-group-6">
+              <div class="u-container-layout u-container-layout-6">
+                <h4 class="u-text u-text-default u-text-5">Klucze główne</h4>
+              </div>
+            </div>
+            <div class="u-palette-1-base u-shape u-shape-rectangle u-shape-2"></div>
+            <div class="u-container-style u-group u-palette-1-base u-shape-rectangle u-group-7">
+              <div class="u-container-layout u-container-layout-7">
+                <h4 class="u-text u-text-default u-text-6">Dane obowiązkowe (not Null)</h4>
+              </div>
+            </div>
+            <div class="u-palette-3-base u-shape u-shape-rectangle u-shape-3"></div>
+            <div class="u-container-style u-group u-palette-3-base u-shape-rectangle u-group-8">
+              <div class="u-container-layout u-container-layout-8">
+                <h4 class="u-text u-text-body-alt-color u-text-default u-text-7">Dane Nieobowiązkowe</h4>
+              </div>
+            </div>
+            <div class="u-black u-container-style u-group u-shape-rectangle u-group-9">
+              <div class="u-container-layout u-container-layout-9">
+                <h4 class="u-text u-text-default u-text-8">Klucze obce</h4>
+              </div>
+            </div>
+            <div class="u-black u-shape u-shape-rectangle u-shape-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-feaf">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h4 class="u-text u-text-1">Tabela pomocnicza "Plany"</h4>
+        <div class="custom-expanded u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="16.4%">
+              <col width="17.1%">
+              <col width="16.2%">
+              <col width="16.8%">
+              <col width="16.8%">
+              <col width="16.70000000000001%">
+            </colgroup>
+            <thead class="u-align-center u-table-header u-table-header-1">
+            <tr style="height: 45px;">
+              <td class="u-border-1 u-border-grey-25 u-palette-2-light-1 u-table-cell u-table-cell-7">ID<br>Planu
+              </td>
+              <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-8">Limit<br>Internetu
+              </td>
+              <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-9">Limit<br>Internetu<br>w EU
+              </td>
+              <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-10">Limit<br>SMS
+              </td>
+              <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-11">Limit<br>MMS
+              </td>
+              <td class="u-border-1 u-border-grey-25 u-palette-3-base u-table-cell u-text-body-alt-color u-table-cell-12">Roaming</td>
+            </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body">
+
+              <tr th:each = "plan : ${listPlan}">
+                <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${plan.id_planu}"></td>
+                <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${plan.limit_internetu}"></td>
+                <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${plan.limit_internetu_eu}"></td>
+                <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${plan.limit_SMS}"></td>
+                <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${plan.limit_MMS}"></td>
+                <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${plan.roaming}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-3" id="sec-f4c1">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h4 class="u-text u-text-1">Tabela pomocnicza "Operatorzy"</h4>
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+          <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="24.8%">
+              <col width="25.8%">
+              <col width="24.400000000000006%">
+              <col width="24.900000000000006%">
+            </colgroup>
+            <thead class="u-align-center u-table-header u-table-header-1">
+            <tr>
+              <td class="u-border-1 u-border-grey-25 u-palette-2-light-1 u-table-cell u-table-cell-5">ID</td>
+              <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-6">Nazwa</td>
+              <td class="u-border-1 u-border-grey-25 u-palette-1-base u-table-cell u-table-cell-7">Data<br>założenia
+              </td>
+              <td class="u-black u-border-1 u-border-grey-25 u-table-cell u-table-cell-8">ID<br>Adresu
+              </td>
+            </tr>
+            </thead>
+            <tbody class="u-align-center u-table-body">
+            <tr th:each = "operator : ${listOperator}">
+              <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${operator.id_operatora}"></td>
+              <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${operator.nazwa}"></td>
+              <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${operator.data_zalozenia}"></td>
+              <td class="u-border-1 u-border-grey-25 u-table-cell" th:text = "${operator.id_adresu}"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+<footer class="u-clearfix u-footer u-grey-80" id="sec-4ac5"><div class="u-clearfix u-sheet u-sheet-1">
+  <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+    <div class="u-gutter-0 u-layout">
+      <div class="u-layout-row">
+        <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md u-layout-cell-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
+            <div data-position="" class="u-position"><!--block-->
+              <div class="u-block">
+                <div class="u-block-container u-clearfix"><!--block_header-->
+                  <h5 class="u-block-header u-text"><!--block_header_content--> Damilphone<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                  <div class="u-block-content u-text"><!--block_content_content--> Limitless horizon<!--/block_content_content--></div><!--/block_content-->
+                </div>
+              </div><!--/block-->
+            </div><!--/position-->
+          </div>
+        </div>
+        <div class="u-align-center-sm u-align-right-md u-container-style u-layout-cell u-size-20 u-size-30-md u-layout-cell-2">
+          <div class="u-container-layout u-valign-top u-container-layout-2">
+            <a href="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D180913231W6972H5702/views/1,width=800,height=800,appearanceId=839,backgroundColor=F2F2F2/meme-cat-naklejka.jpg" class="u-image u-logo u-image-1" data-image-width="2160" data-image-height="1620">
+              <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+            </a>
+          </div>
+        </div>
+        <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-right-lg u-align-right-xl u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-3">
+          <div class="u-container-layout u-valign-middle u-container-layout-3">
+            <h5 class="u-block-header u-text">Opracowanie w ramach przedmiotu "Bazy danych i Big Data"</h5><!--/block_header--><!--block_content-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></footer>
+</body></html>

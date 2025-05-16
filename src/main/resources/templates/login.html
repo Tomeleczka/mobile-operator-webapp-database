@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru" xmlns:th="http://www.thymeleaf"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="keywords" content="Account Login">
+    <meta name="description" content="">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/login.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+
+    <script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "",
+        "logo": "images/Logo_2.png",
+        "sameAs": []
+    }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="login">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru"><header class=" u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-clearfix u-header u-section-row-container" id="sec-462e" style=""><div class="u-section-rows">
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+    var isLoggedInVar = /*[[${isLoggedIn}]]*/ false;
+    /*]]>*/
+</script>
+    <script>
+    function isLoggedIn() {
+        /* Check if the logout was successful and display the alert */
+        console.log(isLoggedInVar);
+        if (isLoggedInVar === true) {
+            successfullyLogout();
+            return true;
+        }
+        else {
+            window.location.href = '/login';
+            return false;
+        }
+    }
+    function successfullyLogout(){
+            alert("You have been successfully logged out");
+    }
+</script>
+    <div class="u-black u-clearfix u-section-row u-sticky u-sticky-3b95" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" id="sec-644f">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <a href="main" class="u-image u-logo u-image-1" title="main" data-image-width="2160" data-image-height="1620">
+                <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+            </a>
+            <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+                    <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+                        <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                        <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+                        </g></svg>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container">
+                    <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="main" style="padding: 10px;">Main</a>
+                    </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="Pomoc" style="padding: 10px;">Pomoc</a>
+                    </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="plany" style="padding: 10px;">Plany</a>
+                    </li><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="konto" style="padding: 10px;">Moje konto</a>
+                    </li><li class="u-nav-item"><form method="post" th:action="@{/logout}"><button class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" style="padding: 10px;" th:onclick="'return isLoggedIn();'" type="submit" th:text="${T(bdbt_bada_project.OSKApplication.UserUtils).getLoginText()}"></button></form>
+                    </li></ul>
+                </div>
+                <div class="u-custom-menu u-nav-container-collapse">
+                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-inner-container-layout u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="main">Main</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Pomoc">Pomoc</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="plany">Plany</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="konto">Moje konto</a>
+                            </li><li class="u-nav-item"><form method="post" th:action="@{/logout}"><button class="u-button-style u-nav-link" th:onclick="'return isLoggedIn();'" type="submit" th:text="${T(bdbt_bada_project.OSKApplication.UserUtils).getLoginText()}"></button></form>
+                            </li></ul>
+                        </div>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div></header>
+<section class="u-clearfix u-section-1" id="sec-38b3">
+    <div class="u-expanded-width u-palette-1-base u-shape u-shape-rectangle u-shape-1"></div>
+    <div class="u-align-center u-border-20 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-container-align-center u-container-style u-custom-border u-group u-radius-46 u-shape-round u-white u-group-1">
+        <div class="u-container-layout u-valign-middle-xs u-container-layout-1">
+            <h2 class="u-align-center u-text u-text-default u-text-palette-1-base u-text-1">Account Login</h2>
+            <div class="u-form u-login-control u-form-1">
+                <form th:action="@{/login}" method="post">
+
+                    <div class="u-form-group u-form-name">
+                        <label for="username-a30d" class="u-label u-text-grey-25 u-label-1">Numer telefonu</label>
+                        <input type="text" placeholder="Wprowadź swój numer telefona" id="username-a30d" name="username" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-input-1" required="">
+                    </div>
+                    <div class="u-form-group u-form-password">
+                        <label for="password-a30d" class="u-label u-text-grey-25 u-label-2">Hasło</label>
+                        <input type="password" placeholder="Wprowadź swoje hasło" id="password-a30d" name="password" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-input-2" required="">
+                    </div>
+                    <div class="u-form-checkbox u-form-group">
+                        <input type="checkbox" id="checkbox-a30d" name="remember" value="On" class="u-field-input">
+                        <label for="checkbox-a30d" class="u-field-label u-text-grey-25" style="text-transform: uppercase; font-size: 0.875rem; letter-spacing: 0px">Remember me</label>
+                    </div>
+                    <div class="u-align-left u-form-group u-form-submit">
+                        <a class="u-btn u-btn-submit u-button-style u-btn-1">Login</a>
+                        <input type="submit" value="Sign in" class="u-form-control-hidden">
+                    </div>
+                    <div class="u-align-left u-form-group u-form-submit">
+                        <a href="/rejestracja" >Jeszcze nie masz konta?</a>
+                    </div>
+
+                    <div th:if="${param.error}" style="color:red; margin-bottom:15px">
+                        ERROR: Invalid username or password!
+                    </div>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+                </form>
+            </div>
+            </div>
+        </div>
+</section>
+<footer class="u-clearfix u-footer u-grey-80" id="sec-4ac5"><div class="u-clearfix u-sheet u-sheet-1">
+    <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+                <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md u-layout-cell-1">
+                    <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
+                        <div data-position="" class="u-position"><!--block-->
+                            <div class="u-block">
+                                <div class="u-block-container u-clearfix"><!--block_header-->
+                                    <h5 class="u-block-header u-text"><!--block_header_content--> Damilphone<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                                    <div class="u-block-content u-text"><!--block_content_content--> Limitless horizon<!--/block_content_content--></div><!--/block_content-->
+                                </div>
+                            </div><!--/block-->
+                        </div><!--/position-->
+                    </div>
+                </div>
+                <div class="u-align-center-sm u-align-right-md u-container-style u-layout-cell u-size-20 u-size-30-md u-layout-cell-2">
+                    <div class="u-container-layout u-valign-top u-container-layout-2">
+                        <a href="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D180913231W6972H5702/views/1,width=800,height=800,appearanceId=839,backgroundColor=F2F2F2/meme-cat-naklejka.jpg" class="u-image u-logo u-image-1" data-image-width="2160" data-image-height="1620">
+                            <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+                        </a>
+                    </div>
+                </div>
+                <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-right-lg u-align-right-xl u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-3">
+                    <div class="u-container-layout u-valign-middle u-container-layout-3">
+                        <h5 class="u-block-header u-text">Opracowanie w ramach przedmiotu "Bazy danych i Big Data"</h5><!--/block_header--><!--block_content-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></footer>
+
+</body></html>
+

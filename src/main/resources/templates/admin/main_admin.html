@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="REKORDY &amp;quot;POCZTY&amp;quot;">
+    <meta name="description" content="">
+    <title>Admin application</title>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/main_admin.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/script.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+
+
+    <script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "",
+        "logo": "/images/Logo_2.png",
+        "sameAs": []
+    }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Страница 1">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="ru"><header class=" u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-clearfix u-header u-section-row-container" id="sec-462e" style=""><div class="u-section-rows">
+    <div class="u-black u-clearfix u-section-row u-sticky u-sticky-3b95" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" id="sec-644f">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <a href="main_admin" class="u-image u-logo u-image-1" title="main" data-image-width="2160" data-image-height="1620">
+                <img src="/images/Logo_2.png" class="u-logo-image u-logo-image-1">
+            </a>
+            <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
+                    <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+                        <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                        <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+                        </g></svg>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container">
+                    <ul class="u-nav u-spacing-20 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" href="main_admin" style="padding: 10px;">Main</a>
+                    </li><li class="u-nav-item"><form method="post" onclick="successfullyLogout()" th:action="@{/logout}"><button class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-text-white" style="padding: 10px;" type="submit">Wyloguj</button></form>
+                    </li></ul>
+                </div>
+                <div class="u-custom-menu u-nav-container-collapse">
+                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-inner-container-layout u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="main_admin">Main</a>
+                            </li><li class="u-nav-item"><form method="post" onclick="successfullyLogout()" th:action="@{/logout}"><button class="u-button-style u-nav-link" type="submit">Wyloguj</button></form>
+                            </li></ul>
+                        </div>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="u-section-row" id="sec-2cae">
+        <div class="u-clearfix u-sheet u-sheet-2">
+            <nav class="u-menu u-menu-one-level u-offcanvas u-menu-2">
+                <div class="menu-collapse">
+                    <a class="u-button-style u-nav-link" href="#">
+                        <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-763d"></use></svg>
+                        <svg class="u-svg-content" version="1.1" id="svg-763d" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+                        </g></svg>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container">
+                    <ul class="u-nav u-unstyled"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="poczty_admin">Poczty</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="adresy_admin">Adresy</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="pracownicy_admin">Pracownicy</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="plany_komorkowe_admin">Plany komórkowe</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="oferty_admin">Oferty</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="klienci_admin">Klienci</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="umowy_admin">Umowy</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="karty_sim_admin">Karty SIM</a>
+                    </li></ul>
+                </div>
+                <div class="u-custom-menu u-nav-container-collapse">
+                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-inner-container-layout u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="poczty_admin">Poczty</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="adresy_admin">Adresy</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="pracownicy_admin">Pracownicy</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="plany_komorkowe_admin">Plany komórkowe</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="oferty_admin">Oferty</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="klienci_admin">Klienci</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="umowy_admin">Umowy</a>
+                            </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="karty_sim_admin">Karty SIM</a>
+                            </li></ul>
+                        </div>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+    </div>
+</div></header>
+<section class="u-clearfix u-section-1" id="sec-0ecd">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-default u-text-1">Hello Admin [-_-] (^o^)&nbsp;</h2>
+
+        <img class="u-image u-image-round u-radius u-image-1" src="images/photo_2024-01-2317.38.03.jpeg" alt="" data-image-width="1280" data-image-height="720">
+        <img class="custom-expanded u-image u-image-2" src="images/photo_2024-01-2317.35.21.jpeg" data-image-width="1170" data-image-height="443"><span class="u-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 53 53" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-44a5"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 53 53" x="0px" y="0px" id="svg-44a5" style="enable-background:new 0 0 53 53;"><path style="fill:#424A60;" d="M50.455,8L50.455,8C49.724,3.538,39.281,0,26.5,0S3.276,3.538,2.545,8l0,0H2.5v0.5V20v0.5V21v11v0.5
+	V33v12h0.045c0.731,4.461,11.175,8,23.955,8s23.224-3.539,23.955-8H50.5V33v-0.5V32V21v-0.5V20V8.5V8H50.455z"></path><g><path style="fill:#424A60;" d="M26.5,41c-13.255,0-24-3.806-24-8.5V45h0.045c0.731,4.461,11.175,8,23.955,8s23.224-3.539,23.955-8
+		H50.5V32.5C50.5,37.194,39.755,41,26.5,41z"></path><path style="fill:#424A60;" d="M2.5,32v0.5c0-0.168,0.018-0.334,0.045-0.5H2.5z"></path><path style="fill:#424A60;" d="M50.455,32c0.027,0.166,0.045,0.332,0.045,0.5V32H50.455z"></path>
+</g><g><path style="fill:#556080;" d="M26.5,29c-13.255,0-24-3.806-24-8.5V33h0.045c0.731,4.461,11.175,8,23.955,8s23.224-3.539,23.955-8
+		H50.5V20.5C50.5,25.194,39.755,29,26.5,29z"></path><path style="fill:#556080;" d="M2.5,20v0.5c0-0.168,0.018-0.334,0.045-0.5H2.5z"></path><path style="fill:#556080;" d="M50.455,20c0.027,0.166,0.045,0.332,0.045,0.5V20H50.455z"></path>
+</g><ellipse style="fill:#7FABDA;" cx="26.5" cy="8.5" rx="24" ry="8.5"></ellipse><g><path style="fill:#7383BF;" d="M26.5,17c-13.255,0-24-3.806-24-8.5V21h0.045c0.731,4.461,11.175,8,23.955,8s23.224-3.539,23.955-8
+		H50.5V8.5C50.5,13.194,39.755,17,26.5,17z"></path><path style="fill:#7383BF;" d="M2.5,8v0.5c0-0.168,0.018-0.334,0.045-0.5H2.5z"></path><path style="fill:#7383BF;" d="M50.455,8C50.482,8.166,50.5,8.332,50.5,8.5V8H50.455z"></path>
+</g></svg></span><span class="u-file-icon u-icon u-icon-2"><img src="images/148924.png" alt=""></span><span class="u-file-icon u-icon u-icon-3"><img src="images/149080.png" alt=""></span>
+    </div>
+</section>
+<footer class="u-clearfix u-footer u-grey-80" id="sec-4ac5"><div class="u-clearfix u-sheet u-sheet-1">
+    <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+                <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md u-layout-cell-1">
+                    <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
+                        <div data-position="" class="u-position"><!--block-->
+                            <div class="u-block">
+                                <div class="u-block-container u-clearfix"><!--block_header-->
+                                    <h5 class="u-block-header u-text"><!--block_header_content--> Damilphone<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                                    <div class="u-block-content u-text"><!--block_content_content--> Limitless horizon<!--/block_content_content--></div><!--/block_content-->
+                                </div>
+                            </div><!--/block-->
+                        </div><!--/position-->
+                    </div>
+                </div>
+                <div class="u-align-center-sm u-align-right-md u-container-style u-layout-cell u-size-20 u-size-30-md u-layout-cell-2">
+                    <div class="u-container-layout u-valign-top u-container-layout-2">
+                        <a href="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T1459A839PA4459PT28D180913231W6972H5702/views/1,width=800,height=800,appearanceId=839,backgroundColor=F2F2F2/meme-cat-naklejka.jpg" class="u-image u-logo u-image-1" data-image-width="2160" data-image-height="1620">
+                            <img src="images/Logo_2.png" class="u-logo-image u-logo-image-1">
+                        </a>
+                    </div>
+                </div>
+                <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-right-lg u-align-right-xl u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-3">
+                    <div class="u-container-layout u-valign-middle u-container-layout-3">
+                        <h5 class="u-block-header u-text">Opracowanie w ramach przedmiotu "Bazy danych i Big Data"</h5><!--/block_header--><!--block_content-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></footer>
+</body></html>
